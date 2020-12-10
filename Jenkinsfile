@@ -27,6 +27,7 @@ pipeline {
                         echo "Nexus IQ scan succeeded: ${policyEvaluation.applicationCompositionReportUrl}"
                     } 
                     catch (error) {
+                        def policyEvaluation = error.policyEvaluation
                         echo "Nexus IQ scan vulnerabilities detected', ${policyEvaluation.applicationCompositionReportUrl}"
                         throw error
                     }
