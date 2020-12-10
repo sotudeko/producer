@@ -35,7 +35,7 @@
             <artifactId>clm-maven-plugin</artifactId>
             <configuration>
               <serverUrl>http://localhost:8870</serverUrl>
-              <applicationId>producer</applicationId>
+              <applicationId>producer-ci</applicationId>
               <stage>build</stage>
               <serverId>clm_server</serverId>
             </configuration>
