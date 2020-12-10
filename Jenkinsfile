@@ -20,8 +20,8 @@ pipeline {
                         nexusPolicyEvaluation failBuildOnNetworkError: true, 
                                               iqApplication: selectedApplication('producer-ci'), 
                                               iqScanPatterns: [[scanPattern: '**/*.war']], 
-                                              iqStage: "${iqstage}", 
-                                              jobCredentialsId: "${jenkinsid}"
+                                              iqStage: "${iqStage}", 
+                                              jobCredentialsId: "${jobCredentialsId}"
                 }
             }
         }
