@@ -6,7 +6,7 @@
 
     <groupId>org.demo</groupId>
     <artifactId>producer</artifactId>
-    <version>1.4</version>
+    <version>1.6</version>
          
     <properties>
          <maven.compiler.target>1.8</maven.compiler.target>
@@ -35,9 +35,9 @@
             <artifactId>clm-maven-plugin</artifactId>
             <configuration>
               <serverUrl>http://localhost:8870</serverUrl>
-              <applicationId>producer-ci</applicationId>
+              <applicationId>producerapp</applicationId>
               <stage>build</stage>
-              <serverId>clm_server</serverId>
+              <serverId>clm_server_producer</serverId>
             </configuration>
           </plugin>
         </plugins>
