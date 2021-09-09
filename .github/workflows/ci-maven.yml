@@ -49,4 +49,4 @@ jobs:
     - name: Nexus IQ evaluation
       uses: docker://sonatype/nexus-iq-cli
       with:
-        args: -s http://localhost:8070 -a admin:admin123 -i ghaction -t build target/
+        args: -s http://5a0d-31-48-224-44.ngrok.io -a admin:admin123 -i ghaction -t build target/
