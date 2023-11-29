@@ -11,14 +11,12 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
-
     maven {
-        url = uri('https://repo.maven.apache.org/maven2/')
-    }
-
-    maven {
-        url = uri('http://localhost:8081/repository/maven-central')
+        credentials {        
+			username "admin"        
+			password "admin123"    
+		}
+        url 'http://localhost:8081/repository/maven-central/'
         allowInsecureProtocol = true
     }
 }
@@ -48,5 +46,5 @@ nexusIQScan {
     username = "admin"
     password = "admin123"
     serverUrl = 'http://localhost:8070'
-    applicationId = 'producer.gr'
+    applicationId = 'producer.gr2'
 }

@@ -1,0 +1,12 @@
+---
+    iq:
+        # public ID for an existing app in IQ Server, usually the repo name
+        PublicApplication: producer
+        # possible stages [develop, build, stage-release, release, operate]
+        Stage: develop
+        Server: http://localhost:8070
+
+    application:
+        # Override VS Code User / Workspace setting for excluding development dependencies for this Application
+        IncludeDev: false
+
