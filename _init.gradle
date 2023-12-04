@@ -1,0 +1,17 @@
+
+// copy this file to ~/.gradle/init.gradle
+
+allprojects {
+  ext.RepoConfigurator = {
+    maven {
+			credentials {
+ 				username "admin"
+ 				password "admin123"
+ 			}
+      url = uri('http://localhost:8081/repository/maven-central-2/') 
+			allowInsecureProtocol = true
+		}
+  }
+  buildscript.repositories RepoConfigurator
+  repositories RepoConfigurator
+}

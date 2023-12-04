@@ -4,28 +4,4 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
-// pluginManagement {
-//     repositories {
-//         maven {
-//             url 'http://localhost:8081/repository/gradle-plugins/'
-//             allowInsecureProtocol = true
-//             credentials {
-//                 username = 'admin'
-//                 password = 'admin123'
-//             }
-//         }
-
-//         maven {
-//             url 'http://localhost:8081/repository/maven-central/'
-//             allowInsecureProtocol = true
-//             credentials {
-//                 username = 'admin'
-//                 password = 'admin123'
-//             }
-//         }
-
-        
-//     }
-// }
-
 rootProject.name = 'producer'

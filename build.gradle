@@ -10,37 +10,6 @@ plugins {
     id 'org.sonatype.gradle.plugins.scan' version '2.2.2'
 }
 
-// repositories {
-//     maven {
-//         credentials {        
-// 			username "admin"        
-// 			password "admin123"    
-// 		}
-//         url 'http://localhost:8081/repository/maven-central/'
-//         allowInsecureProtocol = true
-//     }
-// }
-
-/// Start - Add the config below to ~/.gradle/init.gradle 
-
-// allprojects {
-//   ext.RepoConfigurator = {
-//     maven {
-// 			credentials {
-//  				username "admin"
-//  				password "admin123"
-//  			}
-//       url = uri('http://localhost:8081/repository/maven-central/') 
-// 			allowInsecureProtocol = true
-// 		}
-//   }
-//   buildscript.repositories RepoConfigurator
-//   repositories RepoConfigurator
-// }
-
-/// End 
-
-
 dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.2'
     implementation 'hsqldb:hsqldb:1.8.0.7'
