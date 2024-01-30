@@ -1,6 +1,6 @@
 
 Run: 
 
-mvn clean install clm:evaluate
+mvn clean package clm:evaluate
 
 
