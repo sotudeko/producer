@@ -46,7 +46,7 @@
                 <artifactId>clm-maven-plugin</artifactId>
                 <configuration>
                     <serverUrl>http://localhost:8070</serverUrl>
-                    <applicationId>prod-test-jar</applicationId>
+                    <applicationId>producerapp</applicationId>
                     <stage>build</stage>
                     <username>admin</username>
                     <password>admin123</password>
