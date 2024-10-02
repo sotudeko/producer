@@ -29,5 +29,29 @@ jobs:
         
     - name: Build with Maven
       run: mvn --batch-mode clean package -Dmaven.test.skip=true 
+
+    - name: Evaluate Sonatype CLI
+      id: evaluate
+      uses: sonatype/actions/evaluate@v1
+      with:
+        iq-server-url: https://7a6b-2a00-23c7-6435-5a00-91de-a054-48f5-2842.ngrok-free.app
+        username: admin
+        password: admin123
+        application-id: producer_gha
+        scan-targets: target/*.jar
+    
+    # Fetch the SBOM file associated with the previous Sonatype CLI run
+    - name: Fetch SBOM
+      uses: sonatype/actions/fetch-sbom@v1
+      if: ( success() || failure() ) && steps.evaluate.outputs.scan-id
+      with:
+        iq-server-url: https://7a6b-2a00-23c7-6435-5a00-91de-a054-48f5-2842.ngrok-free.app
+        username: admin
+        password: admin123
+        application-id: producer_gha
+        scan-id: ${{ steps.evaluate.outputs.scan-id }}
+        sbom-standard: cyclonedx
+        sbom-version: 1.5
+        artifact-name: my-sbom
      
    

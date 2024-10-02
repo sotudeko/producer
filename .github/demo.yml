@@ -60,6 +60,7 @@ jobs:
           password: ${{ secrets.LIFECYCLE_PASSWORD }}
           application-id: lifecycle-app
           scan-targets: target/*.jar
+      
       # Fetch the SBOM file associated with the previous Sonatype CLI run
       - name: Fetch SBOM
         uses: sonatype/actions/fetch-sbom@v1
