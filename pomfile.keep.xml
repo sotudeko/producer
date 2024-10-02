@@ -8,16 +8,80 @@
     <artifactId>producer</artifactId>
     <version>2.1</version>
          
+    <properties>
+         <maven.compiler.target>1.8</maven.compiler.target>
+         <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
+
+    <!-- to download from nexus -->
+  	 <repositories>
+	    <repository>
+	      <id>nexus</id>
+	      <url>http://localhost:8081/repository/maven-public</url> 
+	      <releases>
+	         <enabled>true</enabled>
+	      </releases>
+	      <snapshots>
+	         <enabled>true</enabled>
+	      </snapshots>
+	    </repository>
+  	</repositories> 
+
+    <!-- to publish to nexus -->
+    <distributionManagement>
+	    <snapshotRepository>
+	      <id>nexus-snapshots</id>
+	      <url>http://localhost:8081/repository/maven-snapshots</url>
+	    </snapshotRepository>
+	    <repository>
+	      <id>nexus-releases</id>
+	      <url>http://localhost:8081/repository/maven-releases</url>
+	    </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.sonatype.clm</groupId>
+                <artifactId>clm-maven-plugin</artifactId>
+                <configuration>
+                    <serverUrl>http://localhost:8070</serverUrl>
+                    <applicationId>producerapp</applicationId>
+                    <stage>build</stage>
+                    <username>admin</username>
+                    <password>admin123</password>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>index</goal>
+                            <goal>attach</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- default config values -->
+            <!-- mvn cyclonedx:makeAggregateBOM [makeBom, makePackageBOM] -->
+            <plugin>
+                <groupId>org.cyclonedx</groupId>
+                <artifactId>cyclonedx-maven-plugin</artifactId>
+                <version>2.5.1</version>
+            </plugin>
+
+        </plugins>
+    </build>
+
 
     <dependencies>
 
-    <dependency>
-    <groupId>org.xerial.snappy</groupId>
-    <artifactId>snappy-java</artifactId>
-    <version>1.1.2</version>
-    <type>jar</type>
-    <scope>compile</scope>
-    </dependency>
+<dependency>
+  <groupId>org.xerial.snappy</groupId>
+  <artifactId>snappy-java</artifactId>
+  <version>1.1.2</version>
+  <type>jar</type>
+  <scope>compile</scope>
+</dependency>
 
 <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
 

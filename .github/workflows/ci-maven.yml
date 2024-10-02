@@ -27,13 +27,7 @@ jobs:
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
         
-    - name: where is maven? 
-      run: which mvn
-
     - name: Build with Maven
       run: mvn --batch-mode clean package -Dmaven.test.skip=true 
-      
-    - name: What have we got? 
-      run: ls -l target/
-
+     
    
