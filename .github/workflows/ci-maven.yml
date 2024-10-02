@@ -30,6 +30,9 @@ jobs:
     - name: Build with Maven
       run: mvn --batch-mode clean package -Dmaven.test.skip=true 
 
+    - name: What have we got? 
+      run: ls -l target/
+
     - name: Evaluate Sonatype CLI
       id: evaluate
       uses: sonatype/actions/evaluate@v1
