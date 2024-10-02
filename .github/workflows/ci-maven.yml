@@ -1,17 +1,17 @@
 
 name: Build app
 
-on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Submitter'
-        required: true
-        default: 'Sola' 
-      iqstage:
-        description: 'Nexus IQ stage'
-        required: true
-        default: 'build' 
+on: push
+  # workflow_dispatch:
+  #   inputs:
+  #     name:
+  #       description: 'Submitter'
+  #       required: true
+  #       default: 'Sola' 
+  #     iqstage:
+  #       description: 'Nexus IQ stage'
+  #       required: true
+  #       default: 'build' 
 
 jobs:
   build:
